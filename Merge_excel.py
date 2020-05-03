@@ -6,7 +6,7 @@
 # @github ：https://github.com/guitarliu/
 
 import os, re
-import numpy, pkg_resources
+import numpy
 from openpyxl import *
 from tkinter import *
 from tkinter import filedialog, messagebox
