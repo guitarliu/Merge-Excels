@@ -11,6 +11,14 @@ from openpyxl import *
 from tkinter import *
 from tkinter import filedialog, messagebox
 
+def change_list(args):
+    '''
+    change the none-number ones of args's elements to 0
+    '''
+    for i in args:
+        if not str(i).isdigit():
+            args[args.index(i)] = 0
+    return args
 
 def merge_excels():
     '''
@@ -31,8 +39,8 @@ def merge_excels():
             for row2 in ws2.rows:
                 if [row1_content.value for row1_content in row1][(int(e_start.get())-1):int(e_end.get())] == \
                         [row2_content.value for row2_content in row2][(int(e_start.get())-1):int(e_end.get())]:
-                    content1 = numpy.array([row1_content.value for row1_content in row1][(int(e_add_start.get())-1):int(e_add_end.get())])
-                    content2 = numpy.array([row2_content.value for row2_content in row2][(int(e_add_start.get())-1):int(e_add_end.get())])
+                    content1 = numpy.array(change_list([row1_content.value for row1_content in row1][(int(e_add_start.get())-1):int(e_add_end.get())]))
+                    content2 = numpy.array(change_list([row2_content.value for row2_content in row2][(int(e_add_start.get())-1):int(e_add_end.get())]))
                     contents = list(content1 + content2)
                     final_contents = [row1_content.value for row1_content in row1][:(int(e_add_start.get())-1)] + contents + \
                                      [row1_content.value for row1_content in row1][int(e_add_end.get())::]
