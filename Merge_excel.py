@@ -127,5 +127,5 @@ Label(root, text = "例如比较第1/2行，4/5列的内容", padx = 1, pady = 1
 Label(root, text = "对对应行第7/../13列内容相加").grid(row=7, column=1, pady = 3)
 Button(root, text = "开始合并", command = merge_excels).grid(row=9, column = 0, padx = 1, pady = 5)
 Button(root, text = "清   空", command = clear).grid(row=9, column = 1, padx = 1, pady = 5)
-Button(root, text = "退   出", command = quit).grid(row=9, column = 2, padx = 1, pady = 5)
+Button(root, text = "退   出", command = root.quit).grid(row=9, column = 2, padx = 1, pady = 5)
 mainloop()
